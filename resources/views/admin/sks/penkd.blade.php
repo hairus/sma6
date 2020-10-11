@@ -1,0 +1,10 @@
+@extends('admin/layouts')
+@section('breadcum')
+    SKS
+@endsection
+@section('breadcumSub')
+    Controller
+@endsection
+@section('content')
+    gg
+@endsection

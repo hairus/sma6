@@ -1,0 +1,24 @@
+ $(document).ready(function () {
+            var tam = '';
+            $("#kd").on('change',function () {
+                var kd      = $(this).val();
+                var mapel   = {{ $_GET['mapel'] }};
+                var smt     = {{ $_GET['smt'] }};
+                var op      = '';
+                var li      = $(this).parent();
+                $.ajax({
+                    type    :'get',
+                    url     : '{!! URL::to('admin/sks/respon') !!}',
+                    data    : {'mapel':mapel, 'smt':smt, 'kdRpp':kd},
+                    success :function (data) {
+                        for(i = 0; i <= data.length; i++)
+                        {
+                            console.log(data);
+                            //op += '<li>'+data[i].jdlKbm+'</li>'
+                        }
+                        //li.find('#tampil').html('');
+                        li.find('#tampil').append(op);
+                    }
+                });
+            });
+        });
