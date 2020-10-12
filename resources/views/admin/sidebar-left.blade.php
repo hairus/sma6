@@ -28,6 +28,7 @@
                 </a>
                 <ul class="treeview-menu">
                     <li><a href="{{ url('/admin/allUser')}}"><i class="fa fa-circle-o"></i>User</a></li>
+                    <li><a href="{{ url('/admin/allUser')}}"><i class="fa fa-circle-o"></i>User</a></li>
                 </ul>
             </li>
         </ul>
@@ -58,125 +59,7 @@
         @endif
     </ul>
 </li>
-@if(Auth::user()->evaluasi)
-<li class="treeview">
-    <a href="#">
-        <i class="fa fa-users"></i>
-        <span>Evaluasi</span>
-        <span class="pull-right-container">
-            <i class="fa fa-angle-left pull-right"></i>
-        </span>
-    </a>
-    <ul class="treeview-menu">
-        <li><a href="{{ url('/guru/kurikulum/cekSoal') }}"><i class="fa fa-circle-o"></i>Cek Soal</a></li>
-        <li><a href="{{ url('/guru/evaluasi/soalnya') }}"><i class="fa fa-circle-o"></i>Soalnya</a></li>
-        <li><a href="{{ url('/guru/evaluasi/uploadRapor') }}"><i class="fa fa-circle-o"></i>Upload Rapor</a></li>
-        <li><a href="{{ url('/guru/evaluasi/HUR') }}"><i class="fa fa-circle-o"></i>Hasil Unggah Rapor</a></li>
-    </ul>
-</li>
-@endif
-@if(Auth::user()->asistens)
-<li class="treeview">
-    <a href="#">
-        <i class="fa fa-user"></i>
-        <span>Pengembang Kurikulum</span>
-        <span class="pull-right-container">
-            <i class="fa fa-angle-left pull-right"></i>
-        </span>
-    </a>
-    <ul class="treeview-menu">
-        <li><a href="{{ url('/guru/kurikulum/cekSoal') }}"><i class="fa fa-circle-o"></i>Cek Soal</a></li>
-        <li><a href="{{ url('/guru/kurikulum/cekKisi') }}"><i class="fa fa-circle-o"></i>Kisi Kisi Soal</a></li>
-        <li><a href="{{ url('/guru/kurikulum/cekPerangkat') }}"><i class="fa fa-circle-o"></i>Perangkat Guru</a></li>
-        <li><a href="{{ url('/guru/kurikulum/penelaah') }}"><i class="fa fa-circle-o"></i>Penelaah Soal</a></li>
-        <li><a href="{{ url('/guru/kurikulum/remainders') }}"><i class="fa fa-circle-o"></i>Remainders</a></li>
-        <li><a href="{{ url('/guru/kurikulum/ptm') }}"><i class="fa fa-circle-o"></i>Hasil Angket PTM</a></li>
-    </ul>
-</li>
-
-@endif
 <!-- untuk membuat role guru yg sks -->
-@if(Auth::user()->subRole == 1)
-<li class="treeview">
-    <a href="#">
-        <i class="fa fa-user"></i>
-        <span>SKS</span>
-        <span class="pull-right-container">
-            <i class="fa fa-angle-left pull-right"></i>
-        </span>
-    </a>
-    <ul class="treeview-menu" style="display: none;">
-        <li class="treeview">
-            <a href="#">
-                <i class="fa fa-user"></i> PJJ
-                <span class="pull-right-container">
-                    <i class="fa fa-angle-left pull-right"></i>
-                </span>
-            </a>
-            <ul class="treeview-menu" style="display: none;">
-                <li><a href="{{ url('guru/pjj') }}"><i class="fa fa-circle-o"></i>Pemberian Materi</a></li>
-            </ul>
-        </li>
-        <li class="treeview">
-            <a href="#"><i class="fa fa-user"></i> PKPD
-                <span class="pull-right-container">
-                    <i class="fa fa-angle-left pull-right"></i>
-                </span>
-            </a>
-            <ul class="treeview-menu">
-                <li><a href="{{url('/guru/sks/setKd')}}"><i class="fa fa-circle-o"></i>Set KD</a></li>
-                <!-- <li><a href="{{url('/guru/sks/penH')}}"><i class="fa fa-circle-o"></i>Penilaian Harian</a></li> -->
-                <!-- <li><a href="{{url('/guru/sks/fmkls')}}"><i class="fa fa-circle-o"></i>PPD</a> -->
-        </li>
-        <li><a href="{{ url('guru/sks/eximp') }}"><i class="fa fa-circle-o"></i>Import Excel</a></li>
-        <li><a href="{{url('/guru/sks/cekProf')}}"><i class="fa fa-circle-o"></i>Cek Profile</a></li>
-        <!-- <li><a href="{{ url('/admin/sks/npk') }}"><i class="fa fa-circle-o"></i>Cek Nilai Mapel</a> -->
-</li>
-@if(Auth::user()->id == 19 || Auth::user()->id == 1)
-<li><a href="{{url('/guru/sks/cekPro')}}"><i class="fa fa-circle-o"></i>Cek Profile Siswa Per Kelas</a>
-</li>
-@endif
-</ul>
-</li>
-@if(isset(Auth::user()->pa))
-<li class="treeview">
-    <a href="#">
-        <i class="fa fa-user"></i> WALI
-        <span class="pull-right-container">
-            <i class="fa fa-angle-left pull-right"></i>
-        </span>
-    </a>
-    <ul class="treeview-menu" style="display: none;">
-        <li><a href="{{ url('guru/cetak/profile') }}"><i class="fa fa-circle-o"></i>Cetak Profil</a></li>
-    </ul>
-</li>
-@endif
-
-</ul>
-<ul class="treeview-menu" style="display: none;">
-    <li class="treeview">
-        <a href="#"><i class="fa fa-user"></i> Wali Kelas
-            <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-            </span>
-        </a>
-        <ul class="treeview-menu">
-            <li><a href="{{ '/guru/cekNilai' }}"><i class="fa fa-circle-o"></i>Pengecekan Nilai UKBM</a></li>
-        </ul>
-    </li>
-</ul>
-{{-- <ul class="treeview-menu">--}}
-{{-- <li><a href={{url("guru/sks")}}><i class="fa fa-circle-o"></i>Profil Peserta Didik</a>
-</li>--}}
-{{-- <li><a href={{url("guru/sks/up")}}><i class="fa fa-circle-o"></i>Upload Pembelajaran</a></li>--}}
-{{-- <li><a href={{url("guru/sks/inKel")}}><i class="fa fa-circle-o"></i>Akses File UKBM</a></li>--}}
-{{-- <li><a href="{{url("guru/sks/formuh")}}"><i class="fa fa-circle-o"></i>Penilaian Harian(PH)</a></li>--}}
-{{-- <li><a href={{url("guru/sks/hasil")}}><i class="fa fa-circle-o"></i>Hasil Penilaian Guru</a></li>--}}
-{{-- <li><a href={{url("guru/sks/lengkap")}}><i class="fa fa-circle-o"></i>Proses Nilai</a></li>--}}
-{{-- <li><a href="{{ url('guru/sks/formKD') }}"><i class="fa fa-circle-o"></i>Pembuatan KD</a></li>--}}
-{{-- <li><a href="{{ url('guru/sks/penilaian') }}"><i class="fa fa-circle-o"></i>Penilaian KD</a></li>--}}
-{{-- </ul>--}}
-@endif
 <li class="treeview">
     <a href="#">
         <i class="fa fa-book"></i>
