@@ -13,7 +13,7 @@
             <div class="box">
                 <div class="box-header">
                     <div class="box-title">
-                        List User
+                        List User semua
                     </div>
                 </div>
                 <div class="box-body">
