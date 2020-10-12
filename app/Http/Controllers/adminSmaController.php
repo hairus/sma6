@@ -17,4 +17,9 @@ class adminSmaController extends Controller
         $user = User::all();
         return view('adminNew.index', compact('user'));
     }
+
+    public function cu()
+    {
+        dd('come');
+    }
 }

@@ -46,7 +46,7 @@ return [
         'mysql' => [
             'driver' => 'mysql',
             'url' => env('DATABASE_URL'),
-            'host' => env('DB_HOST', '127.0.0.1'),
+            'host' => '192.168.56.102',
             'port' => 3306,
             'database' => ('sidemit'),
             'username' => ('hairus'),
