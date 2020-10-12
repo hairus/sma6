@@ -55,9 +55,9 @@
 
             <a href="{{url('/')}}" class="logo">
                 <!-- mini logo for sidebar mini 50x50 pixels -->
-                <span class="logo-mini">SIDEMIT REBORN</span>
+                <span class="logo-mini">Belum ada nama</span>
                 <!-- logo for regular state and mobile devices -->
-                <span class="logo-lg">SIDEMIT REBORN</span>
+                <span class="logo-lg">Belum ada nama</span>
             </a>
             <!-- Header Navbar: style can be found in header.less -->
             <nav class="navbar navbar-static-top">
@@ -126,7 +126,7 @@
 
                 <!-- /.search form -->
                 <!-- sidebar menu: : style can be found in sidebar.less -->
-                @include('admin/sidebar-left')
+                @include('admin/menu')
             </section>
             <!-- /.sidebar -->
         </aside>

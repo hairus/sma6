@@ -15,9 +15,7 @@
         "laravel/framework": "5.8.*",
         "laravel/passport": "^7.5.1",
         "laravel/tinker": "^1.0",
-        "maatwebsite/excel": "^2.1",
-        "unisharp/laravel-ckeditor": "^4.7",
-        "unisharp/laravel-filemanager": "dev-master"
+        "maatwebsite/excel": "^3.1"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",

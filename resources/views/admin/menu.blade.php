@@ -28,7 +28,7 @@
                 </a>
                 <ul class="treeview-menu">
                     <li><a href="{{ url('/admin/allUser')}}"><i class="fa fa-circle-o"></i>User</a></li>
-                    <li><a href="{{ url('/admin/allUser')}}"><i class="fa fa-circle-o"></i>User</a></li>
+                    <li><a href="{{ url('/admin/allUser')}}"><i class="fa fa-circle-o"></i>export inport</a></li>
                 </ul>
             </li>
         </ul>
@@ -49,14 +49,6 @@
         <li><a href="{{url('guru/absen')}}"><i class="fa fa-circle-o"></i> Riwayat Absen</a></li>
         <li><a href="{{url('guru/uploadG')}}"><i class="fa fa-circle-o"></i> Upload Perangkat</a></li>
         <li><a href="{{url('guru/dokumen') }}"><i class="fa fa-circle-o"></i> Dokumen Kurikulum</a></li>
-        @if(Auth::user()->id == 31)
-        <li>
-            <a href="{{ url('/guru/koperasi')}}"><i class="fa fa-circle-o"></i>Data Upload Siswa Baru</a>
-        </li>
-        @endif
-        @if(Auth::user()->id == 34)
-        <li><a href="{{url('/admin/AdminAbsen/RGBulanan')}}"><i class="fa fa-circle-o"></i> Rekap Guru Bulanan</a></li>
-        @endif
     </ul>
 </li>
 <!-- untuk membuat role guru yg sks -->
@@ -89,60 +81,6 @@
     </ul>
 </li>
 @endif
-{{-- menu untuk PPDB   --}}
-@if(Auth::user()->id == 43 OR Auth::user()->id == 37 OR Auth::user()->id == 1 OR Auth::user()->id == 55)
-<li class="treeview">
-    <a href="#">
-        <i class="fa fa-user"></i>
-        <span>PPDB 2020</span>
-        <span class="pull-right-container">
-            <i class="fa fa-angle-left pull-right"></i>
-        </span>
-    </a>
-    <ul class="treeview-menu">
-        <li><a href="{{url('guru/casisLeng')}}"><i class="fa fa-circle-o"></i>Cek Siswa Tahap 3</a></li>
-    </ul>
-</li>
-@endif
-@if(Auth::user()->tatib == 1)
-<li class="treeview">
-    <a href="#">
-        <i class="fa fa-book"></i>
-        <span>Poin Siswa</span>
-        <span class="pull-right-container">
-            <i class="fa fa-angle-left pull-right"></i>
-        </span>
-    </a>
-    <ul class="treeview-menu">
-        <li><a href="{{ url('guru/Cpoin') }}"><i class="fa fa-book"></i>Input Poin</a></li>
-        <li><a href="{{ url('guru/jumpoin') }}"><i class="fa fa-book"></i>Jumlah Poin</a></li>
-        <li><a href="{{ url('guru/Ppoint') }}"><i class="fa fa-print"></i>Cetak Point</a></li>
-    </ul>
-</li>
-@endif
-<li class="treeview">
-    <a href="#">
-        <i class="fa fa-arrows"></i>
-        <span>Eksternal Link</span>
-        <span class="pull-right-container">
-            <i class="fa fa-angle-left pull-right"></i>
-        </span>
-    </a>
-    <ul class="treeview-menu">
-        <li><a target="_blank" href="{{url('http://erapor.sumenepsmansa.sch.id')}}"><i class="fa fa-circle-o"></i>E
-                rapor SMAN 1 SUMENEP</a></li>
-        <li><a target="_blank" href="{{url('http://sispena.bansm.or.id')}}"><i class="fa fa-circle-o"></i>Sispena</a>
-        </li>
-        <li><a target="_blank" href="{{url('http://gerbangkurikulum.psma.kemdikbud.go.id')}}"><i
-                    class="fa fa-circle-o"></i>Gerbang Kurikulum</a></li>
-    </ul>
-</li>
-<li class="treeview">
-    <a href="{{url('guru/form')}}">
-        <i class="fa fa-key"></i>
-        <span>Ganti Password</span>
-    </a>
-</li>
 @elseif (Auth::user()->role == 2)
 <li class="treeview">
     <a href="#">
