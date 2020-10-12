@@ -42,39 +42,6 @@
     <link rel="stylesheet" href="{{ asset('AdminLTE/plugins/datatables/dataTables.bootstrap.css') }}">
     <link rel="icon" href="data:;base64,iVBORw0KGgo=">
 
-
-    <!-- mencoba membuat jam -->
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.10/css/bootstrap-material-design.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.10/css/ripples.min.css" />
-
-    <link rel="stylesheet" href="{{ asset('AdminLTE/dp/css/bootstrap-material-datetimepicker.css')}}" />
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.10/js/ripples.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.10/js/material.min.js"></script>
-    <script type="text/javascript" src="https://rawgit.com/FezVrasta/bootstrap-material-design/master/dist/js/material.min.js"></script>
-    <script type="text/javascript" src="http://momentjs.com/downloads/moment-with-locales.min.js"></script>
-    <script type="text/javascript" src="{{ asset('AdminLTE/dp/js/bootstrap-material-datetimepicker.js')}}">
-    </script>
-
-    <script>
-        (function(i, s, o, g, r, a, m) {
-            i['GoogleAnalyticsObject'] = r;
-            i[r] = i[r] || function() {
-                (i[r].q = i[r].q || []).push(arguments)
-            }, i[r].l = 1 * new Date();
-            a = s.createElement(o),
-                m = s.getElementsByTagName(o)[0];
-            a.async = 1;
-            a.src = g;
-            m.parentNode.insertBefore(a, m)
-        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-
-        ga('create', 'UA-60343429-1', 'auto');
-        ga('send', 'pageview');
-    </script> -->
-
-
-    <!--[endif]-->
 </head>
 <noscript>
 
@@ -102,38 +69,6 @@
                 <div class="navbar-custom-menu">
                     <ul class="nav navbar-nav">
                         <!-- Messages: style can be found in dropdown.less-->
-
-                        <!-- Notifications: style can be found in dropdown.less -->
-                        <li class="dropdown notifications-menu">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <i class="fa fa-bell-o"></i>
-                                <!-- jika waktu belum tidak muncul  -->
-                                @php
-
-                                @endphp
-                                @if(auth()->user()->notifications->count())
-                                <span class="label label-warning">
-                                    {{ count(auth()->user()->unreadNotifications)}}
-                                </span>
-                                @endif
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li class="header">You have notifications</li>
-                                <li>
-                                    <!-- inner menu: contains the actual data -->
-                                    <ul class="menu">
-                                        @foreach(auth()->user()->unreadNotifications as $notif)
-                                        <li>
-                                            <a href="{{ url('siswa/materi')}}">
-                                                <i class="fa fa-users text-aqua"></i>{{ $notif->data['data'] }}
-                                            </a>
-                                        </li>
-                                        @endforeach
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <!-- Tasks: style can be found in dropdown.less -->
 
                         <!-- User Account: style can be found in dropdown.less -->
                         <li class="dropdown user user-menu">
