@@ -47,7 +47,7 @@
 
 </noscript>
 
-<body class="hold-transition skin-green sidebar-mini">
+<body class="hold-transition skin-yellow sidebar-mini">
     <div class="wrapper">
 
         <header class="main-header">
