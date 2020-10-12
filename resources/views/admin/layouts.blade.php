@@ -145,12 +145,6 @@
                 </ol>
             </section>
             @include('admin/flash_notif')
-            {{-- iframe sidemit --}}
-            {{-- <div class="embed-responsive embed-responsive-16by9">
-                <iframe width="1519" height="586" src="https://www.youtube.com/embed/iIXQMSGLI7c" frameborder="0"
-                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen></iframe>
-            </div> --}}
             <!-- Main content -->
             <div id="app">
                 @yield('content')
@@ -219,22 +213,6 @@
         <script src="{{ asset('vendor/unisharp/laravel-ckeditor/adapters/jquery.js') }}"></script>
         <!-- bootstrap time picker -->
         <script src="{{ asset('/AdminLTE/plugins/timepicker/bootstrap-timepicker.min.js') }}"></script>
-        <script type="text/javascript">
-            /*select 2*/
-            $(".select2").select2();
-
-            /*data Table*/
-            $("#dataTable").DataTable();
-            $('#dataTable2').DataTable({
-                "paging": true,
-                "lengthChange": false,
-                "searching": false,
-                "ordering": true,
-                "info": true,
-                "autoWidth": false
-            });
-        </script>
-
         @yield('script')
 
 </body>

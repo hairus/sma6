@@ -28,7 +28,7 @@
                 </a>
                 <ul class="treeview-menu">
                     <li><a href="{{ url('/admin/allUser')}}"><i class="fa fa-circle-o"></i>User</a></li>
-                    <li><a href="{{ url('/admin/allUser')}}"><i class="fa fa-circle-o"></i>export inport</a></li>
+                    <li><a href="{{ url('/admin/exim')}}"><i class="fa fa-circle-o"></i>export inport</a></li>
                 </ul>
             </li>
         </ul>

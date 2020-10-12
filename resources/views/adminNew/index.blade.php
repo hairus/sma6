@@ -8,7 +8,7 @@
 @section('content')
     <br>
     <br>
-    <div class="container mt-lg-auto">
+    <div class="container">
         <div class="row">
             <div class="box">
                 <div class="box-header">

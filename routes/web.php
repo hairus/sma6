@@ -35,7 +35,11 @@ Route::group(['middleware' => ['admin']], function () {
 
     /* admin sma 6*/
     Route::get('admin/allUser', 'adminSmaController@index');
-
+    Route::get('admin/exim', 'adminSmaController@exim');
+    Route::get('admin/exportSiswa', 'adminSmaController@exportSiswa');
+    Route::post('admin/ImportSiswa', 'adminSmaController@ImportSiswa');
+    Route::get('admin/exportGuru', 'adminSmaController@exportGuru');
+    Route::post('admin/ImportGuru', 'adminSmaController@ImportGuru');
 });
 
 //=================ROUTE GURU =============================//
