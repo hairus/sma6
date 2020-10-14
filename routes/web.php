@@ -7,18 +7,10 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Notifications\Notifiable;
 
-// Config::set('debugbar.enabled', false);
+
 Route::get('/', function () {
     return view('welcome');
 });
-
-// Route::get('admin/read', function () {
-//     Auth::user()->unreadNotifications->markAsRead();
-//     // Auth::user()->notifications()->delete();
-
-//     return back();
-// });
-
 
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 Route::get('login', '\App\Http\Controllers\Auth\LoginController@showLoginForm');
@@ -32,7 +24,6 @@ Route::group(['middleware' => ['admin']], function () {
     Route::get('/admin', function () {
         return view('/admin/layouts');
     });
-
     /* admin sma 6*/
     Route::get('admin/allUser', 'adminSmaController@index');
     Route::get('admin/exim', 'adminSmaController@exim');
@@ -40,35 +31,29 @@ Route::group(['middleware' => ['admin']], function () {
     Route::post('admin/ImportSiswa', 'adminSmaController@ImportSiswa');
     Route::get('admin/exportGuru', 'adminSmaController@exportGuru');
     Route::post('admin/ImportGuru', 'adminSmaController@ImportGuru');
+
+    /** set kelas */
+    Route::get('/admin/kelas', 'adminSmaController@kelas');
+    Route::post('/admin/ck', 'adminSmaController@ck');
+    Route::delete('/admin/del', 'adminSmaController@delKelas');
 });
 
 //=================ROUTE GURU =============================//
 Route::group(['middleware' => ['guru']], function () {
-
+    Route::get('guru', 'guruSmaController@index');
+    Route::get('guru/plhKls', 'guruSmaController@plhKls');
+    Route::post('guru/plhKls', 'guruSmaController@kelas_id');
+    Route::get('guru/kelas/{id}', 'guruSmaController@redirect');
+    Route::post('guru/upload', 'guruSmaController@upload');
+    Route::get('guru/allUpload', 'guruSmaController@allUpload');
+    Route::get('guru/delUpload/{id}', 'guruSmaController@delUpload');
 });
 
-//================= ROUTE PIKET=================================//
-Route::group(['middleware' => ['piket']], function () {
-
-});
-
-//================ ROUTE BK ============================//
-Route::group(['middleware' => ['bk']], function () {
-
-});
-
-//=================route nya siswa =============================//
-Route::group(['middleware' => ['absen']], function () {
-
-});
 
 //================= ROUTE siswa yang ngabsen =================================//
 Route::group(['middleware' => ['murid']], function () {
-
-});
-
-Route::group(['middleware' => ['tu']], function () {
-
+    Route::get('siswa', 'siswaController@index');
+    Route::get('siswa/download', 'siswaController@download');
 });
 
 /*============= siba =======================*/
@@ -78,4 +63,3 @@ Route::group(['middleware' => ['siba']], function () {
     Route::get('/sibA/tampil', 'Siba1Controller@tampilview');
     Route::post('/sibA/bio1', 'Siba1Controller@updateForm');
 });
-

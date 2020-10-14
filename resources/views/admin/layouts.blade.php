@@ -53,11 +53,11 @@
         <header class="main-header">
             <!-- Logo -->
 
-            <a href="{{url('/')}}" class="logo">
+            <a href="#" class="logo">
                 <!-- mini logo for sidebar mini 50x50 pixels -->
-                <span class="logo-mini">Belum ada nama</span>
+                <span class="logo-mini">SIAKAS</span>
                 <!-- logo for regular state and mobile devices -->
-                <span class="logo-lg">Belum ada nama</span>
+                <span class="logo-lg">SIAKAS</span>
             </a>
             <!-- Header Navbar: style can be found in header.less -->
             <nav class="navbar navbar-static-top">
@@ -73,17 +73,18 @@
                         <!-- User Account: style can be found in dropdown.less -->
                         <li class="dropdown user user-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <img src="{{asset ('/AdminLTE/dist/img/user2-160x160.jpg')}}" class="user-image" alt="User Image">
+                                <img src="{{asset ('/AdminLTE/dist/img/user2-160x160.jpg')}}" class="user-image"
+                                    alt="User Image">
                                 <span class="hidden-xs">{{ Auth::user()->name }}</span>
                             </a>
                             <ul class="dropdown-menu">
                                 <!-- User image -->
                                 <li class="user-header">
-                                    <img src="{{asset ('/AdminLTE/dist/img/user2-160x160.jpg')}}" class="img-circle" alt="User Image">
+                                    <img src="{{asset ('/AdminLTE/dist/img/user2-160x160.jpg')}}" class="img-circle"
+                                        alt="User Image">
 
                                     <p>
                                         {{ Auth::user()->name }}
-                                        <small>{{ Auth::user()->status }}</small>
                                     </p>
                                 </li>
                                 <!-- Menu Body -->
@@ -95,7 +96,8 @@
                                         <a href="" class="btn btn-default btn-flat">Profile</a>
                                     </div>
                                     <div class="pull-right">
-                                        <a id="logout-form" href="{{ url('/logout') }}" class="btn btn-default btn-flat" outonclick="document.getElementById('logout-form').submit();">Sign Out</a>
+                                        <a id="logout-form" href="{{ url('/logout') }}" class="btn btn-default btn-flat"
+                                            outonclick="document.getElementById('logout-form').submit();">Sign Out</a>
                                     </div>
                                 </li>
                             </ul>
@@ -115,7 +117,8 @@
                 <!-- Sidebar user panel -->
                 <div class="user-panel">
                     <div class="pull-left image">
-                        <img src="{{asset ('/AdminLTE/dist/img/user2-160x160.jpg')}}" class="img-circle" alt="User Image">
+                        <img src="{{asset ('/AdminLTE/dist/img/user2-160x160.jpg')}}" class="img-circle"
+                            alt="User Image">
                     </div>
                     <div class="pull-left info">
                         <p>{{ Auth::user()->name }}</p>

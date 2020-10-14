@@ -26,28 +26,28 @@ Controller
             <form action="{{ url('/admin/ImportSiswa') }}" enctype="multipart/form-data" method="post">
                 @csrf
                 <div class="form-group">
-                    <label for="">Import Siswa</label>
+                    <label for="">Import User</label>
                     <input type="file" class="form-control" required name="siswa">
                 </div>
                 <a href="{{ url('/admin/exportSiswa') }}">
-                    <button type="button" class="btn btn-success">Export Siswa(template)</button>
+                    <button type="button" class="btn btn-success">Export Excel(template)</button>
                 </a>
                 <button class="btn btn-success">Import</button>
             </form>
         </div>
-        <div class="box-body">
+        {{-- <div class="box-body">
             <form action="{{ url('admin/ImportGuru') }}" enctype="multipart/form-data" method="post">
-                @csrf
-                <div class="form-group">
-                    <label for="">Import wali</label>
-                    <input type="file" class="form-control" required name="guru">
-                </div>
-                <a href="{{ url('admin/exportGuru') }}">
-                    <button type="button" class="btn btn-primary">Export Guru(template)</button>
-                </a>
-                <button class="btn btn-primary">Import</button>
-            </form>
+        @csrf
+        <div class="form-group">
+            <label for="">Import wali</label>
+            <input type="file" class="form-control" required name="guru">
         </div>
-    </div>
+        <a href="{{ url('admin/exportGuru') }}">
+            <button type="button" class="btn btn-primary">Export Guru(template)</button>
+        </a>
+        <button class="btn btn-primary">Import</button>
+        </form>
+    </div> --}}
+</div>
 </div>
 @endsection

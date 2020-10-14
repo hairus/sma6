@@ -46,10 +46,10 @@ return [
         'mysql' => [
             'driver' => 'mysql',
             'url' => env('DATABASE_URL'),
-            'host' => '192.168.56.102',
+            'host' => '192.168.56.104',
             'port' => 3306,
-            'database' => ('sidemit'),
-            'username' => ('hairus'),
+            'database' => ('sma6'),
+            'username' => ('root'),
             'password' => ('Tuxmania10032010'),
             'unix_socket' => env('DB_SOCKET', ''),
             'charset' => 'utf8mb4',

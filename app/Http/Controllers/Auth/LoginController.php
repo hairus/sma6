@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Models\ppdb_profile;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
-use Auth;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -25,17 +25,7 @@ class LoginController extends Controller
         } elseif ($role == 2) {
             return 'guru';
         } elseif ($role == 3) {
-            return 'piket';
-        } elseif ($role == 4) {
-            return 'bk';
-        } elseif ($role == 9) {
-            return 'tu/RAbsen';
-        } elseif ($role == 6) {
-            return 'admin';
-        } elseif ($role == 98) { //untuk siswa yang baru masuk
-            return 'ppdb2020/formulir';
-        } elseif ($role == 99) { // untuk siswa pengisian data dapodik
-            return 'sibA/index';
+            return 'siswa';
         }
     }
 

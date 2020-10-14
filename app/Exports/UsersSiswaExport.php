@@ -32,6 +32,8 @@ class UsersSiswaExport implements fromQuery, WithHeadings
             'Name',
             'Role',
             'Email',
+            'nis',
+            'kelas_id'
         ];
     }
 }

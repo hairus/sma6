@@ -1,48 +1,58 @@
 @extends('/admin/layouts')
 @section('breadcum')
-    Management User
+Management User
 @endsection
 @section('breadcumSub')
-    Controller
+Controller
 @endsection
 @section('content')
-    <br>
-    <br>
-    <div class="container">
-        <div class="row">
-            <div class="box">
-                <div class="box-header">
-                    <div class="box-title">
-                        List User semua
-                    </div>
+<br>
+<br>
+<div class="container">
+    <div class="row">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">
+                    List User semua
                 </div>
-                <div class="box-body">
-                    <table class="table table-bordered table-hover" id="table">
-                        <thead>
+            </div>
+            <div class="box-body">
+                <table class="table table-bordered table-hover" id="table">
+                    <thead>
                         <th>No</th>
+                        <th>Nis</th>
                         <th>Nama</th>
                         <th>Email</th>
                         <th>Role</th>
-                        </thead>
-                        <tbody>
+                        <th>Kelas</th>
+                    </thead>
+                    <tbody>
                         @php $no = 1 @endphp
                         @foreach($user as $data)
-                            <tr>
-                                <td>{{ $no++ }}</td>
-                                <td>{{$data->name}}</td>
-                                <td>{{ $data->email }}</td>
-                                <td>{{ $data->role }}</td>
-                            </tr>
+                        <tr>
+                            <td>{{ $no++ }}</td>
+                            <td>{{ $data->nis }}</td>
+                            <td>{{ $data->name }}</td>
+                            <td>{{ $data->email }}</td>
+                            <td>{{ $data->role }}</td>
+                            <td>
+                                @if(isset($data->kelas))
+                                {{ $data->kelas->kelas }}
+                                @else
+                                -
+                                @endif
+                            </td>
+                        </tr>
                         @endforeach
-                        </tbody>
-                    </table>
-                </div>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
+</div>
 @endsection
 @section('script')
-    <script>
-        $('#table').dataTable();
-    </script>
+<script>
+    $('#table').dataTable();
+</script>
 @endsection

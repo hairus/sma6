@@ -8,6 +8,7 @@ use App\User;
 use Illuminate\Http\Request;
 use App\Exports\UsersSiswaExport;
 use App\Exports\UsersGuruExport;
+use App\Models\kelas;
 use Maatwebsite\Excel\Facades\Excel;
 
 class adminSmaController extends Controller
@@ -56,5 +57,38 @@ class adminSmaController extends Controller
 
             return redirect('/admin/exim')->with('success', 'All good!');
         }
+    }
+
+
+    /** setting kelas */
+    public function kelas()
+    {
+        $kelas = kelas::all();
+
+        return view('adminNew.kelas', compact('kelas'));
+    }
+
+    public function ck(Request $request)
+    {
+        $request->validate([
+            'kelas' => 'required'
+        ]);
+
+        kelas::create([
+            'kelas' => $request->kelas
+        ]);
+
+        return back()->with('message', 'berhasil menambah kelas');
+    }
+
+    public function delKelas(Request $request)
+    {
+        $request->validate([
+            'kelas_id' => 'required'
+        ]);
+        $kelas = kelas::findorFail($request->kelas_id);
+        $kelas->delete();
+
+        return back()->with('message', 'sukses menghapus kelas');
     }
 }
